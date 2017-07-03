@@ -1,58 +1,93 @@
 var center;
 var latitud;
 var longitud;
-var mapa = null;
+var map = null;
 
-$(document).ready(function() {
-    localizame(); /*Cuando cargue la página, cargamos nuestra posición*/   
-});
+/*Control del redimensionamiento de la ventana*/
+window.onresize = function(){
+  document.getElementById("contenedor_mapa").style.height = (window.innerHeight) + "px";
+}
 
-function initMap() {
-    var mapdivMap = document.getElementById("contenedor_mapa");
-    var myOptions = {
-        zoom: 17,
-        center: maps, /* Definimos la posicion del mapa con el punto */
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-            };/*Configuramos una serie de opciones como el zoom del mapa y el tipo.*/
-            map = new google.maps.Map($("#map_canvas").get(0), myOptions); /*Creamos el mapa y lo situamos en su capa */
-            
-            var coorMarcador = new google.maps.LatLng(latitud,longitud); /*Un nuevo punto con nuestras coordenadas para el marcador (flecha) */
+/* Creo el mapa, y lo centro en las coordenadas de la ubicacion del usuario*/
+function initMap(){
+  var mapdivMap = document.getElementById("contenedor_mapa");
+  mapdivMap.style.width = (window.innerWidth);
+  mapdivMap.style.height = (window.innerHeight) + "px";
 
-            var marcador = new google.maps.Marker({
-                /*Creamos un marcador*/
-                position: coorMarcador, /*Lo situamos en nuestro punto */
-                map: map, /* Lo vinculamos a nuestro mapa */
-                title: "Dónde estoy?" 
-            });
-        }
+  center = new google.maps.LatLng(latitud, longitud);
+  var myOptions = {
+    zoom: 17,
+    zoomControl: false,
+    disableDefaultUI: true,/*inhabilita controles del mapa*/
+    center: center,/* Definimos la posicion del mapa con el punto */
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  } /*zoom del mapa y otras cosas*/
+  map = new google.maps.Map(document.getElementById("contenedor_mapa"), myOptions);
+  findme();
+}
 
-        function localizame() {
-            if (navigator.geolocation) { /* Si el navegador tiene geolocalizacion */
-                navigator.geolocation.getCurrentPosition(coordenadas, errores);
-            }else{
-                alert('Oops! Tu navegador no soporta geolocalización. Bájate Chrome, que es gratis!');
+/*solicitud de geolocalización y ver si el navegador la soporta*/
+
+function findme(){/* Si el navegador tiene geolocalizacion */
+  if(navigator.geolocation){
+        //alert ("Obteniendo posición...");
+        navigator.geolocation.getCurrentPosition(centrarMapa,errorPosicionar);
+      }else{
+        alert('Oops! Tu navegador no soporta geolocalización');
+      }   
+    }
+
+    /*alerts en caso de errores*/
+
+    function errorPosicionar(error) {
+      /*alert en caso de error*/
+      alert("Oops! Algo ha salido mal");
+    }  
+
+    /* Esta función se ejecuta si getCurrentPosition tiene éxito. La latitud y la longitud vienen dentro del objeto coords*/
+
+    function centrarMapa(pos, z){
+      map.setZoom(15);
+      map.setCenter(new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude));
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude),
+        title:"Usted está aquí",
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE, //cambiamos el marcador por defecto por uno de círculo
+          scale: 10
+        },
+        draggable: true,
+        map: map
+      });
+    }
+
+
+/*DirectionsService y DirectionsDisplay se desprenden de google, son objetos de google
+        var ds = new google.maps.DirectionsService();//obtiene las coordenadas
+        var dr = new google.maps.DirectionsRenderer();//traduce esas coordenadas a la ruta visible (ruta en azul en el mapa)
+        //document.getElementById("origen").addEventListener("change", onChangeHandler);
+        document.getElementById("destino").addEventListener("change", onChangeHandler);
+        
+        function rutaVisible (ds, dr) {
+          ds.route({
+            origin: center,
+            destination: document.getElementById("pickup").value,
+            travelMode: "DRIVING"
+          },
+          function(response, status) {
+            if (status === "OK") {
+              dr.setDirections(response);
+            } else {
+              window.alert("Ruta "+ status);
             }
+          });
         }
-
-        function coordenadas(position) {
-            latitud = position.coords.latitude; /*Guardamos nuestra latitud*/
-            longitud = position.coords.longitude; /*Guardamos nuestra longitud*/
-            initMap();
-        }
-
-        function errores(err) {
-            /*Controlamos los posibles errores */
-            if (err.code == 0) {
-              alert("Oops! Algo ha salido mal");
-          }
-          if (err.code == 1) {
-              alert("Oops! No has aceptado compartir tu posición");
-          }
-          if (err.code == 2) {
-              alert("Oops! No se puede obtener la posición actual");
-          }
-          if (err.code == 3) {
-              alert("Oops! Hemos superado el tiempo de espera");
-          }
-      }
-
+        
+//onChangeHandler = Agrega una propiedad de seguimiento a una definición de lenguaje específico de dominio
+        dr.setMap(contenedor_mapa);
+        var onChangeHandler = function(){
+            //Servicio de indicaciones
+            rutaVisible(ds, dr);
+        }; 
+        document.getElementById("pickup").addEventListener("click",onChangeHandler);
+        */
