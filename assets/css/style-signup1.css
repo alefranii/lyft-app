@@ -16,6 +16,9 @@ hr {
 .free-ride{
 	text-align: center;
 }
+.free-ride a{
+	color: black;
+}
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
 	width: 70px;
 	margin: 0 -7px 2px 5px;
