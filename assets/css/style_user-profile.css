@@ -64,23 +64,21 @@ h4 {
 font-size: 1.5rem;
 }
 form {
-width: 90%;
-margin: 0 auto;
-max-width: 600px;
-padding: 0 5%;
-font-size: 85%;
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: 85%;
 }
 label {
 display: block;
 font-weight: 800;
-color: #6730EC;
+color: #ff00bf;
 margin: 1.2em 0 .5em;
 float: left;
 }
 input, select {
 width: 100%;
 border-radius: 3px;
-border: 1px solid #f1f1f1;
+border-bottom: 1px solid #f1f1f1;
 line-height: 120%;
 padding: 1%;
 font-size: 120%;
@@ -186,7 +184,7 @@ margin: 0;
 .menu li a:hover,
 .menu li a:focus,
 .menu li a.active {
-    color: #f20256;
+    color: #ff00bf;
 }
 .menu li a span.icon {
     font-size: 28px;
@@ -211,6 +209,9 @@ margin: 0;
 .open-hide:hover {
     cursor: pointer;
 }
+.open-menu {
+        height: 100vh;
+}
 .show {
     background-image: url("../img/");
     background-size: 15px;
@@ -227,6 +228,7 @@ margin: 0;
     position: absolute;
     z-index: 100;
     top: 0;
+    min-height: 100vh;
 }
 #menu-aside > * {
     vertical-align: top;
@@ -307,4 +309,14 @@ header .menu-top {
 }
 #profile-data .user-presentation .row {
     margin-bottom: 1em;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #ff00bf;
+    border-color: #ff00bf;
+    width: 100%;
+    margin: 2em 0;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: .5em;
 }
