@@ -6,8 +6,8 @@ $(document).ready(function(){
         localStorage.setItem("name", nombre);
         var musica = $("#music").val();
         localStorage.setItem("music", musica).val();
-        var usuario = $("#places").val();
-		localStorage.setItem("places", usuario).val();
+        var usuario = $("#place").val();
+		localStorage.setItem("place", usuario).val();
 		var photo = $("#photo-profile").val();
 		localStorage.setItem("photo-profile", photo).val();
 
@@ -21,12 +21,13 @@ $(document).ready(function(){
 	// Leemos los valores de las variables del navegador y las ponemos en una variable para posteriormente mostrarlo en el navegador
 	var name = localStorage.getItem("name");
 	var music = localStorage.getItem("music");
-	var places = localStorage.getItem("places");
+	var places = localStorage.getItem("place");
 	var photo = localStorage.getItem("photo-profile");
  
 	$("#name").append(name);
+	$("#name-menu").append(name);
 	$("#music").append(music);
-	$("#places").append(places);
+	$("#place").append(place);
 	$("#photo-profile").append(photo);
 
 });
