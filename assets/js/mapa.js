@@ -107,5 +107,3 @@ var onChangeHandler = function(){
             //Servicio de indicaciones
             rutaVisible(ds, dr);
           }; 
-
-          document.getElementById("pickup").addEventListener("click",onChangeHandler);*/
