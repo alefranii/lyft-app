@@ -1,5 +1,4 @@
- 
-.contenedor_mapa{
+ .contenedor_mapa{
     width: 100%; 
     height: 100%;     
     position: relative; 
@@ -8,31 +7,39 @@
 
 #pickup{
     color: #fff;
-    height: 40px;
+    height: 50px;
     width: 100%;
     background-color: #aa8bbc ;
     border-radius: 6px;
     border-color: none;
     font-size: 16px;
-    font-weight: lighter;
+    border: none;
 }
 
 .input{
     /*margin-bottom: 1px;*/
-    height: 40px;
+    height: 50px;
     width: 100%;
     border-radius: 6px;
     border-color: none;
+    border: none;
 }
 
 #botoncitos{
     position: absolute;
     bottom: 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
 }
 
 #logo{
     width: 50px;
     height: auto;
+    font-weight: bold;
 }
 
 header{
@@ -63,3 +70,32 @@ header{
     height: auto;
         display: block;
 }
+
+.contenedor_mapa{
+	width: 100%; 
+	height: 100%; 
+	position: relative; 
+	overflow: hidden;
+}
+
+#pickup{
+	color: #fff;
+	height: 40px;
+	width: 100%;
+	background-color: #aa8bbc;
+	border-radius: 6px;
+	border-color: none;
+	font-size: 16px;
+	font-weight: lighter;
+}
+
+.input{
+	/*margin-bottom: 1px;*/
+	height: 40px;
+	width: 100%;
+	border-radius: 6px;
+	border-color: none;
+}
+
+
+
