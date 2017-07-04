@@ -42,7 +42,6 @@ $(".boton-datos").on("click", function(e){
     }
 
     if(nombre != "" && email.indexOf('@') != -1 && $('#check-datos').is(':checked')){
-        alert("verdad");
         localStorage.setItem("nombre apellido", nombre);
         localStorage.setItem("email", email);
     }else{
