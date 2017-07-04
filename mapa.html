@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es_CL">
+<head>
+	<title>Viaja con Lyft</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Desarrollo ejercicio evaluado por squad de la Lección 35: Eventos en JQuery">
+	<meta name="author" content="Grumpy Squad">
+	<!-- Bootstrap Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Fontawesome -->
+	<script src="https://use.fontawesome.com/d2c9b2c5c1.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/mapa.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/mediamapa.css">
+</head>
+<body>
+
+	<!--header-->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="user-icon pull-left">
+					<img src="assets/img/user-default.png" class="img-circle">
+				</div>
+				<img src="assets/img/logo-white.png" alt="logo" id="logo">
+				<div class="user-icon pull-right">
+					<i class="fa fa-gift" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="mapita" >
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12" id="contenedor_mapa">
+				</div><!-- mapitaaaa-->
+				<form id="botoncitos" class="col-xs-12">
+					<div class="form-group">
+						<input type="" class="input" id="destino"> 
+					</div>
+					<div class="form-group">
+						<button type="submit" name="button" id="pickup" class="btn-submit">Set pickup</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	
+
+	<!--<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<small>Desarrollado por Grumpy Squad</small>
+				</div>
+			</div>
+		</div>
+	</footer>-->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyMiI3Ys2k5ZzCM4Mankj6HpHhFDqKHcQ&callback=initMap&libraries=places"></script>
+	<script src="assets/js/mapa.js"></script>
+	
+</body>
+</html>
+
