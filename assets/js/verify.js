@@ -3,11 +3,11 @@ $(document).ready(function(){
 
   var random = Math.floor(Math.random()*900) + 100;
   var randomCod = random;
-  alert("Tu código es: " + random);
-  $("#codigo").append( + random);
+  alert("Tu código es: " + randomCod);
+  $("#codigo").append( randomCod);
   
   $(".boton-codigo").on("click", function(e){
-    var valor = $("#numberInput").val();
+    var valor = $("#codigo-input").val();
     if(randomCod == valor){
       localStorage.setItem("codigo", randomCod);
     }else{
@@ -16,11 +16,11 @@ $(document).ready(function(){
     }
   });
   $("#codig").hide();
-  $("#codig").append( + random);
+  $("#codig").append( randomCod);
   $("#hint").on("click", function(){
     $("#codig").show();
   });
-});  
+
 
 
 
@@ -58,3 +58,5 @@ $(".delete").on('click',function(){
   $(".number-input").val(phoneNumber);
   $(".call-button").removeClass("show");
 });
+
+});  
