@@ -1,0 +1,152 @@
+body{
+	height: 100vh;
+}
+
+.lyft{
+	color: #FF00BF;
+}
+a {
+	text-decoration: none;
+}
+
+p{
+	color: #FF00BF;
+}
+.form-group{
+	width: 50%;
+}
+.caja{
+	margin: auto;
+	width: 30%;
+	margin-bottom: 15px;
+}
+.botones{
+	text-align: center;
+}
+
+
+.btn button{
+	width: 30%;
+	display: block;
+	text-align: center;
+	font-weight: 800;
+	cursor: pointer;
+	color: #FF00BF;
+	background-color: transparent;
+	letter-spacing: 1px;
+	font-size: 90%;
+	padding: 1em 1.5em;
+	transition: .5s ease all;
+	margin: 2em auto 1em;
+	border: 1px solid #FF00BF;
+	width: 100%;
+}
+.imglog{
+	width: 30%;
+	margin: 15px 0 15px 0
+}
+
+
+/* teclado numerico */
+input {
+	font-size:20px;
+	color:black;
+	font-weight:400;
+}
+input .number-input {
+	width:100%;
+	height:55px;
+	line-height:55px;
+	text-align:center;
+	padding:0 20px;
+	border-radius:10px;
+	border:0;
+	-webkit-box-shadow: 0px 0px 17px -1px rgba(132,132,132,0.15);
+	-moz-box-shadow: 0px 0px 17px -1px rgba(132,132,132,0.15);
+	box-shadow: 0px 0px 17px -1px rgba(132,132,132,0.15);
+}
+
+.wrapper .phone {
+	width:350px;
+	margin:40px auto 0 auto;
+	position: relative;
+}
+.wrapper span.title {
+	font-weight:700;
+	letter-spacing: 2px;
+	display:block;
+	text-align:center;
+}
+.phone-container {
+	width:100%;
+	margin-top:30px;
+}
+.phone-container.keyboard {
+	width:90%;
+	margin-left:5%;
+	margin-top:40px;
+}
+.phone-container.number {
+	width:100%;
+	font-size:0;
+	text-align:center;
+}
+.phone-container &.aling-right {
+	text-align:right;
+	width:100%;
+}
+
+span {
+	/* border-bottom: 2px #6730EC solid; */
+	font-weight: 700;
+	font-size: 24px;
+	color: #FF00BF;
+	display: inline-block;
+	width: 28%;
+	text-align: center;
+	margin-bottom: 25px;
+	box-sizing: border-box;
+}
+
+
+i {
+	display:inline-block;
+	width:80px;
+	height:80px;
+	line-height:80px;
+	background:white;
+	cursor:pointer;
+	border-radius:100%;
+	transition:250ms;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	-webkit-box-shadow: 8px 8px 24px 0px rgba(132,132,132,0.09);
+	-moz-box-shadow: 8px 8px 24px 0px rgba(132,132,132,0.09);
+	box-shadow: 8px 8px 24px 0px rgba(132,132,132,0.09);
+}
+
+
+
+/* media query*/
+@media only screen and (max-width: 768px){
+	.form-group{
+		width: 90%;
+	}
+	.terminos{
+		width: 90%;
+	}
+	.imglog{
+		width: 90%;
+	}
+	.btn{
+		width: 90%;
+	}
+	.caja{
+		width: 90%;
+	}
+}
