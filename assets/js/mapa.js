@@ -23,6 +23,7 @@ function initMap(){
     disableDefaultUI: true, //esto deshabilita los controladores de mapa y satellite de la esquina superior izq
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
+
   map = new google.maps.Map(document.getElementById("contenedor_mapa"),myOptions);
   /*solicitud de geolocalización y ver si el navegador la soporta*/
 
@@ -100,10 +101,9 @@ function initMap(){
             }
           });
         }
-
 /*onChangeHandler = Agrega una propiedad de seguimiento a una definición de lenguaje específico de dominio
 dr.setMap(contenedor_mapa);
 var onChangeHandler = function(){
             //Servicio de indicaciones
             rutaVisible(ds, dr);
-          }; 
+        }; */
