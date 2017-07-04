@@ -1,8 +1,7 @@
 # lyft-app
 Desarrollo Ejercicio Evaluado por Squad de Lección 35: Eventos con JQuery
 
-mis archivos son:
-verify.html
-verify.css
-verify.js
-
+Validaciones realizadas con jQuery.
+Desarrollo con framework Bootstrap.
+Aplicación de localStorage y Google Maps Geolocation API
+Uso de Trello en la organización de tareas del squad.
